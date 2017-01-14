@@ -1,0 +1,45 @@
+{
+  "name": "vue-multi-version",
+  "version": "0.1.0",
+  "description": "require modules based on Vue.js version",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhoriuchi/vue-multi-version.git"
+  },
+  "scripts": {
+    "build:copybrc": "cp build/.build.babelrc src/.babelrc",
+    "build:rmbrc": "rm -f src/.babelrc",
+    "build": "npm run build:copybrc && rollup -c build/rollup.config.js && npm run build:rmbrc",
+    "test": "npm run build && mocha test/index.js"
+  },
+  "author": "Branden Horiuchi <bhoriuchi@gmail.com>",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chalk": "^1.1.3",
+    "chai": "^3.5.0",
+    "babel-core": "^6.21.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-runtime": "^6.20.0",
+    "babel-register": "^6.18.0",
+    "mocha": "^3.0.0",
+    "rollup": "^0.41.0",
+    "rollup-plugin-babel": "^2.7.0",
+    "babel-preset-es2015-rollup": "^3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/bhoriuchi/vue-multi-version/issues"
+  },
+  "homepage": "https://github.com/bhoriuchi/vue-multi-version#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "vue",
+    "version"
+  ]
+}
