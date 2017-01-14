@@ -49,7 +49,7 @@ Returns the first argument if `1.x` and the second if `2.x`
 
 #### VueMultiVersion.register ( `name`, `vm`, `Vue1Component`, `Vue2Component` )
 
-Registers `Vue1Component` or `Vue2Component` based on the Vue.js version
+Registers `Vue1Component` or `Vue2Component` based on the Vue.js version. **Important** must be placed in the `created` hook or earlier
 
 **Parameters**
 
