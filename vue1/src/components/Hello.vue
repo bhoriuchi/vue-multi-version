@@ -6,8 +6,8 @@
 </template>
 
 <script type="text/babel">
-  import Vue1Component from './Vue1Component'
-  import Vue2Component from './Vue2Component'
+  import Vue1Component from '../../../src/Vue1Component'
+  import Vue2Component from '../../../src/Vue2Component'
   import VueMultiVersion from '../../../src/index'
   export default {
     data () {

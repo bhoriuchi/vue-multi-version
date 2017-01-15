@@ -1,7 +1,7 @@
 {
   "name": "vue-multi-version",
   "version": "0.1.0",
-  "description": "require modules based on Vue.js version",
+  "description": "select/require based on Vue.js version",
   "license": "MIT",
   "main": "index.js",
   "repository": {
