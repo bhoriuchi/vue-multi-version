@@ -30,20 +30,34 @@ Requires that `Vue.js` `1.x` or `2.x` is included in your project
 </script>
 ```
 
+### Example Plugin
+
+```js
+import multi from 'vue-multi-version'
+import MyComponentVue1 from './MyComponentVue1'
+import MyComponentVue2 from './MyComponentVue2'
+
+export default {
+  install (Vue) {
+    let MyComponent = multi(Vue).select(MyComponentVue1, MyComponentVue2)
+    Vue.component('my-component', Vue.extend(MyComponent))    
+  }
+}
+```
+
 ### API
 
 ---
 
-#### VueMultiVersion ( `Vue1Value`, `Vue2Value` )
+#### VueMultiVersion ( [ `Vue` ] )
 
-Returns the first argument if `1.x` and the second if `2.x`
+Creates a new instance of VueMultiVersion
 
 **Parameters**
 
-* `Vue1Value` { `*` } - any value that requires Vue.js 1.x
-* `Vue2Value` { `*` } - any value that requires Vue.js 2.x
+* [`Vue`] { `Vue` } - Optional Vue.js instance
 
-*Returns* { * } - the first or second argument
+*Returns* { `VueMultiVersion` }
 
 ---
 
@@ -57,3 +71,14 @@ Registers `Vue1Component` or `Vue2Component` based on the Vue.js version. **Impo
 * `vm` { `Object` } - the current Vue.js component instance
 * `Vue1Component` { `Object` } - Vue.js 1.x component
 * `Vue2Component` { `Object` } - Vue.js 2.x component
+
+#### VueMultiVersion.select ( `Vue1Value`, `Vue2Value` )
+
+Returns the first argument if `1.x` and the second if `2.x`
+
+**Parameters**
+
+* `Vue1Value` { `*` } - any value that requires Vue.js 1.x
+* `Vue2Value` { `*` } - any value that requires Vue.js 2.x
+
+*Returns* { `*` } - the first or second argument

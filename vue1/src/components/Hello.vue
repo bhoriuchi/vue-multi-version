@@ -6,9 +6,10 @@
 </template>
 
 <script type="text/babel">
+  import Vue from 'vue'
   import Vue1Component from '../../../src/Vue1Component'
   import Vue2Component from '../../../src/Vue2Component'
-  import VueMultiVersion from '../../../src/index'
+  import VueMultiVersion from '../../../index'
   export default {
     data () {
       return {
@@ -20,7 +21,7 @@
       }
     },
     created () {
-      VueMultiVersion.register('multicomponent', this, Vue1Component, Vue2Component)
+      VueMultiVersion(Vue).register('multicomponent', this, Vue1Component, Vue2Component)
     }
   }
 </script>

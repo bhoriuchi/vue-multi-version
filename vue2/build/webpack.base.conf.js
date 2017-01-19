@@ -2,7 +2,7 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-
+var srcRoot = path.resolve(projectRoot, '../src')
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide whether to enable CSS source maps for the
 // various preprocessor loaders added to vue-loader at the end of this file
@@ -38,7 +38,8 @@ module.exports = {
         test: /\.vue$/,
         loader: 'eslint',
         include: [
-          path.join(projectRoot, 'src')
+          path.join(projectRoot, 'src'),
+          srcRoot
         ],
         exclude: /node_modules/
       },
@@ -46,7 +47,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint',
         include: [
-          path.join(projectRoot, 'src')
+          path.join(projectRoot, 'src'),
+          srcRoot
         ],
         exclude: /node_modules/
       }
@@ -60,7 +62,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: [
-          path.join(projectRoot, 'src')
+          path.join(projectRoot, 'src'),
+          srcRoot
         ],
         exclude: /node_modules/
       },
